@@ -1,0 +1,12 @@
+package com.cos.util;
+
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+
+// 硫붿씪濡� �젒洹�(�궗�슜)�븷 �븣 �씤利� : 援ш� �븘�씠�뵒, 援ш� 鍮꾨�踰덊샇
+public class Gmail extends Authenticator {
+	@Override
+	protected PasswordAuthentication getPasswordAuthentication() {
+		return new PasswordAuthentication("ssarmango@gmail.com", "A");
+	}
+}

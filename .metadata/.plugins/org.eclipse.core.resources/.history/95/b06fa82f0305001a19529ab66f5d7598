@@ -1,0 +1,5 @@
+package com.cos.action.user;
+
+public class UserProfileAction {
+
+}

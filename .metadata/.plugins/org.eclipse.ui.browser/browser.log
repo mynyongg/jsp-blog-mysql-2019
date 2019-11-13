@@ -1,0 +1,3 @@
+
+11월 13, 2019 12:07:11.06 NEW SESSION
+11월 13, 2019 12:07:11.06 [6228:8124:1113/120711.058:ERROR:CONSOLE(3576)] "Could not load content for http://localhost:8000/blog/scss/style.css : HTTP status code: 404", source: devtools://devtools/bundled/shell.js (3576)

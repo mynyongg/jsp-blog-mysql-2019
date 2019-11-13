@@ -1,0 +1,35 @@
+package com.cos.action.user;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.cos.action.Action;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+
+public class UserProfileAction implements Action {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+String path =request.getRealPath("media");
+		
+		MultipartRequest multi = new MultipartRequest(
+			request,//요청받을 파일
+			path,//요청받을 경로
+			1024*1024*2,//사이즈 : 2MB	
+			"UTF-8", //인코딩 방식
+			new DefaultFileRenamePolicy() //동일한 파일명이 들어오면 파일면 뒤에 숫자를 붙
+		); 
+		String username = multi.getParameter("username");
+		String filename = multi.getFilesystemName("userProfile"); //정책에 의해서 변경된 이름
+		String originFilename = multi.getOriginalFileName("userProfile");
+		String contextPath = request.getSession().getServletContext().getContextPath();
+		String filePath = contextPath + "/media/" + filename ;
+		
+	}
+
+}
